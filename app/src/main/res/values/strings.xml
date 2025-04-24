@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">MOTOTRACER</string>
+    <string name="Texto1">Inicia una nueva aventura con MotoTracer y descubre una nueva forma de ver el mundo.</string>
+    <string name="btnComenzar">Comienza</string>
+    <string name="btnRegistrar">Registrate</string>
+    <string name="TxtLogin">La aventura esta por iniciar, porfavor inicia sesion</string>
+    <string name="btnIngresar">Ingresar</string>
+    <string name="btnRecuperar">Recupera tu contraseña</string>
+    <string name="btnGoogle">Ingresa con Google</string>
+    <string name="txtRegistrate">No tienes cuenta?</string>
+    <string name="logo_de_la_aplicacion">Logo de la Aplicacion</string>
+    <string name="tienda_virtual">Tienda Virtual</string>
+    <string name="inicio">Inicio</string>
+    <string name="carrito">Carrito</string>
+    <string name="perfil">Perfil</string>
+    <string name="menu">Menu</string>
+    <string name="salir">Salir</string>
+    <string name="bienvenido">Bienvenido</string>
+    <string name="productos">Productos</string>
+    <string name="categorias">Categorias</string>
+    <string name="open_drawer">menu abierto</string>
+    <string name="close_drawer">menu cerrado</string>
+    <string name="editar_perfil">Editar Perfil</string>
+    <string name="tiendas">Editar Tiendas</string>
+</resources>

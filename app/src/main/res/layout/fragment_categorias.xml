@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@color/Blanco">
+
+    <!-- Categoría 1 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="12dp"
+        android:layout_marginBottom="10dp"
+        android:elevation="2dp">
+
+        <ImageView
+            android:id="@+id/imgCtElectronica"
+            app:srcCompat="@drawable/kawasaki"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:scaleType="centerCrop"
+            android:layout_marginEnd="16dp" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtNombreCategoria1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Kawasaki"
+                android:textStyle="bold"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/txtCantidadProductos1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="25 productos"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="14sp" />
+
+            <Button
+                android:id="@+id/More_button_Electronica"
+                android:layout_width="60dp"
+                android:layout_height="18dp"
+                android:background="@drawable/boton_redondeado_parcial"
+                android:text="Ver Mas" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- Categoría 2 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="12dp"
+        android:layout_marginBottom="10dp"
+        android:elevation="2dp">
+
+        <ImageView
+            android:id="@+id/imgCategoria2"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/ktm"
+            android:layout_marginEnd="16dp"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtNombreCategoria2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="KTM"
+                android:textStyle="bold"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/txtCantidadProductos2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="40 productos"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="14sp" />
+            <Button
+                android:id="@+id/More_button_Ropa"
+                android:layout_width="60dp"
+                android:layout_height="25dp"
+                android:text="Ver Mas"
+                android:background="@drawable/boton_redondeado_parcial"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- Categoría 3 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="12dp"
+
+        android:layout_marginBottom="10dp"
+        android:elevation="2dp">
+
+        <ImageView
+            android:id="@+id/imgCategoria3"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/yamaha"
+            android:layout_marginEnd="16dp" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtNombreCategoria3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Yamaha"
+                android:textStyle="bold"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/txtCantidadProductos3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="12 productos"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="14sp" />
+            <Button
+                android:id="@+id/More_button_Hogar"
+                android:layout_width="60dp"
+                android:layout_height="25dp"
+                android:text="Ver Mas"
+                android:background="@drawable/boton_redondeado_parcial"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- Categoría 4 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="12dp"
+        android:layout_marginBottom="10dp"
+        android:elevation="2dp">
+
+        <ImageView
+            android:id="@+id/imgCategoria4"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/ducati"
+            android:layout_marginEnd="16dp" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtNombreCategoria4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ducati"
+                android:textStyle="bold"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/txtCantidadProductos4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="30 productos"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="14sp" />
+            <Button
+                android:id="@+id/More_button_Deportes"
+                android:layout_width="60dp"
+                android:layout_height="25dp"
+                android:text="Ver Mas"
+                android:background="@drawable/boton_redondeado_parcial"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- Categoría 5 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="12dp"
+        android:layout_marginBottom="10dp"
+        android:elevation="2dp">
+
+        <ImageView
+            android:id="@+id/imgCategoria5"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/suzuki"
+            android:layout_marginEnd="16dp" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtNombreCategoria5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Suzuki"
+                android:textStyle="bold"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/txtCantidadProductos5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="22 productos"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="14sp" />
+            <Button
+                android:id="@+id/More_button_Accesorios"
+                android:layout_width="60dp"
+                android:layout_height="25dp"
+                android:text="Ver Mas"
+                android:background="@drawable/boton_redondeado_parcial"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

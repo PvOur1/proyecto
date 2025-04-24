@@ -1,0 +1,126 @@
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/inicioFragment">
+
+    <fragment
+        android:id="@+id/inicioFragment"
+        android:name="com.example.taller2.fragments.InicioFragment"
+        android:label="@string/inicio">
+        <action
+            android:id="@+id/action_inicioFragment_to_productosFragment"
+            app:destination="@id/productosFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/productosFragment"
+        android:name="com.example.taller2.fragments.ProductosFragment"
+        android:label="@string/productos" />
+
+    <fragment
+        android:id="@+id/carritoFragment"
+        android:name="com.example.taller2.fragments.CarritoFragment"
+        android:label="@string/carrito">
+        <action
+            android:id="@+id/action_carritoFragment_to_productosFragment"
+            app:destination="@id/productosFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/perfilFragment"
+        android:name="com.example.taller2.fragments.PerfilFragment"
+        android:label="Perfil">
+        <action
+            android:id="@+id/action_perfilFragment_to_editarPerfilFragment"
+            app:destination="@id/editarPerfilFragment"
+            app:popUpTo="@id/perfilFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/editarPerfilFragment"
+        android:name="com.example.taller2.fragments.EditarPerfilFragment"
+        android:label="@string/editar_perfil">
+        <action
+            android:id="@+id/action_editarPerfilFragment_to_perfilFragment"
+            app:destination="@id/perfilFragment"
+            app:popUpTo="@id/perfilFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_editarPerfilFragment_to_inicioFragment"
+            app:destination="@id/inicioFragment"
+            app:popUpTo="@id/inicioFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/CategoriasFragment"
+        android:name="com.example.taller2.fragments.CategoriasFragment"
+        android:label="@string/categorias">
+        <action
+            android:id="@+id/action_CategoriasFragment_to_inicioFragment"
+            app:destination="@id/inicioFragment" />
+        <action
+            android:id="@+id/action_CategoriasFragment_to_accesoriosFragment"
+            app:destination="@id/accesoriosFragment" />
+        <action
+            android:id="@+id/action_CategoriasFragment_to_ropaFragment"
+            app:destination="@id/ropaFragment" />
+        <action
+            android:id="@+id/action_CategoriasFragment_to_hogarFragment"
+            app:destination="@id/hogarFragment" />
+        <action
+            android:id="@+id/action_CategoriasFragment_to_deporteFragment"
+            app:destination="@id/deportesFragment" />
+        <action
+            android:id="@+id/action_CategoriasFragment_to_electronicaFragment"
+            app:destination="@id/electronicaFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/ropaFragment"
+        android:name="com.example.taller2.fragments.RopaFragment"
+        android:label="Ropa">
+        <action
+            android:id="@+id/action_ropaFragment_to_CategoriasFragment"
+            app:destination="@id/CategoriasFragment" />
+</fragment>
+
+    <fragment
+        android:id="@+id/hogarFragment"
+        android:name="com.example.taller2.fragments.HogarFragment"
+        android:label="Hogar" />
+    <action
+        android:id="@+id/action_hogarFragment_to_CategoriasFragment"
+        app:destination="@id/CategoriasFragment" />
+
+    <fragment
+        android:id="@+id/deportesFragment"
+        android:name="com.example.taller2.fragments.DeporteFragment"
+        android:label="Deportes" />
+    <action
+        android:id="@+id/action_deporteFragment_to_CategoriasFragment"
+        app:destination="@id/CategoriasFragment" />
+
+    <fragment
+        android:id="@+id/accesoriosFragment"
+        android:name="com.example.taller2.fragments.AccesoriosFragment"
+        android:label="Accesorios" >
+        <action
+            android:id="@+id/action_accesoriosFragment_to_CategoriasFragment"
+            app:destination="@id/CategoriasFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/electronicaFragment"
+        android:name="com.example.taller2.fragments.ElectronicaFragment"
+        android:label="Electrónica" />
+    <action
+        android:id="@+id/action_electronicaFragment_to_CategoriasFragment"
+        app:destination="@id/CategoriasFragment" />
+    <fragment
+        android:id="@+id/tiendaFragment"
+        android:name="com.example.taller2.fragments.TiendaFragment"
+        android:label="@string/tiendas"/>
+
+</navigation>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:padding="24dp">
+
+        <!-- Imagen de perfil -->
+        <ImageView
+            android:id="@+id/imgPerfil"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:src="@drawable/hombre"
+            android:contentDescription="Imagen de perfil"
+            android:layout_marginBottom="20dp"
+            android:scaleType="centerCrop"
+           />
+
+        <!-- Campo de nombres -->
+        <TextView
+            android:id="@+id/tvNombresLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nombres"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/tvNombres"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Juan Sebastián"
+            android:textSize="16sp"
+            android:padding="8dp"
+            android:background="@android:drawable/editbox_background"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- Campo de apellidos -->
+        <TextView
+            android:id="@+id/tvApellidosLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Apellidos"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/tvApellidos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Hernández López"
+            android:textSize="16sp"
+            android:padding="8dp"
+            android:background="@android:drawable/editbox_background"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- Campo de correo -->
+        <TextView
+            android:id="@+id/tvCorreoLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Correo electrónico"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/tvCorreo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="juan.hernandez@email.com"
+            android:textSize="16sp"
+            android:padding="8dp"
+            android:background="@android:drawable/editbox_background"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- Campo de teléfono -->
+        <TextView
+            android:id="@+id/tvTelefonoLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Número de teléfono"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/tvTelefono"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="+57 300 123 4567"
+            android:textSize="16sp"
+            android:padding="8dp"
+            android:background="@android:drawable/editbox_background"
+            android:layout_marginBottom="20dp"/>
+
+        <!-- Botón de Editar -->
+        <Button
+            android:id="@+id/btnEditar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/boton_redondeado_parcial"
+            android:padding="12dp"
+            android:text="Editar Perfil"
+            android:textColor="@android:color/white" />
+
+        <Button
+            android:id="@+id/actividad_central"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/boton_redondeado_parcial"
+            android:padding="12dp"
+            android:text="Actividad del parcial"
+            android:textColor="@android:color/white" />
+    </LinearLayout>
+</ScrollView>

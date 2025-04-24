@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="IntellinDots Motos"
+            android:textStyle="bold"
+            android:textSize="36sp"
+            android:textColor="@color/black"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Kawasaki -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/bordeado_back"
+            android:padding="16dp"
+            android:layout_marginBottom="24dp"
+            android:elevation="4dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/kawa1" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Kawasaki Ninja ZX-10R"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:layout_marginTop="8dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Potencia, velocidad y diseño agresivo para los amantes de la adrenalina."
+                android:textSize="14sp"
+                android:textColor="@android:color/darker_gray"
+                android:layout_marginTop="4dp" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Ver más"
+                android:layout_marginTop="12dp"
+                android:backgroundTint="@color/Morado_parcial"
+                android:textColor="@android:color/white" />
+        </LinearLayout>
+
+        <!-- Yamaha -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/bordeado_back"
+            android:padding="16dp"
+            android:layout_marginBottom="24dp"
+            android:elevation="4dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/yama1" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Yamaha R1"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:layout_marginTop="8dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tecnología MotoGP en una motocicleta diseñada para carretera."
+                android:textSize="14sp"
+                android:textColor="@android:color/darker_gray"
+                android:layout_marginTop="4dp" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Ver más"
+                android:layout_marginTop="12dp"
+                android:backgroundTint="@color/Morado_parcial"
+                android:textColor="@android:color/white" />
+        </LinearLayout>
+
+        <!-- Ducati -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/bordeado_back"
+            android:padding="16dp"
+            android:layout_marginBottom="24dp"
+            android:elevation="4dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/duca1" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Ducati Panigale V4"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:layout_marginTop="8dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Estilo italiano, rendimiento de pista, pasión Ducati."
+                android:textSize="14sp"
+                android:textColor="@android:color/darker_gray"
+                android:layout_marginTop="4dp" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Ver más"
+                android:layout_marginTop="12dp"
+                android:backgroundTint="@color/Morado_parcial"
+                android:textColor="@android:color/white" />
+        </LinearLayout>
+
+        <!-- KTM -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/bordeado_back"
+            android:padding="16dp"
+            android:layout_marginBottom="24dp"
+            android:elevation="4dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/duke1" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="KTM Duke 390"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:layout_marginTop="8dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Agilidad urbana y potencia para el día a día."
+                android:textSize="14sp"
+                android:textColor="@android:color/darker_gray"
+                android:layout_marginTop="4dp" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Ver más"
+                android:layout_marginTop="12dp"
+                android:backgroundTint="@color/Morado_parcial"
+                android:textColor="@android:color/white" />
+        </LinearLayout>
+
+        <!-- Suzuki -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/bordeado_back"
+            android:padding="16dp"
+            android:elevation="4dp"
+            android:layout_marginBottom="24dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/suzu1" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Suzuki GSX-R1000"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:layout_marginTop="8dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Precisión japonesa para los verdaderos fanáticos de la velocidad."
+                android:textSize="14sp"
+                android:textColor="@android:color/darker_gray"
+                android:layout_marginTop="4dp" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Ver más"
+                android:layout_marginTop="12dp"
+                android:backgroundTint="@color/Morado_parcial"
+                android:textColor="@android:color/white" />
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

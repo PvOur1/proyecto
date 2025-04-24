@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/inicioFragment"
+            android:title="@string/inicio" />
+        <item
+            android:id="@+id/productosFragment"
+            android:title="@string/productos" />
+        <item
+            android:id="@+id/carritoFragment"
+            android:title="@string/carrito" />
+        <item
+            android:id="@+id/perfilFragment"
+            android:title="@string/perfil" />
+        <item
+            android:id="@+id/CategoriasFragment"
+            android:title="@string/categorias" />
+        <item
+            android:id="@+id/electronicaFragment"
+            android:title="• Electrónica" />
+        <item
+            android:id="@+id/ropaFragment"
+            android:title="• Ropa" />
+        <item
+            android:id="@+id/hogarFragment"
+            android:title="• Hogar" />
+        <item
+            android:id="@+id/deportesFragment"
+            android:title="• Deportes" />
+        <item
+            android:id="@+id/accesoriosFragment"
+            android:title="• Accesorios" />
+        <item
+            android:id="@+id/editarPerfilFragment"
+            android:title="@string/editar_perfil" />
+        <item
+            android:id="@+id/TiendaFragment"
+            android:title="@string/tiendas" />
+
+    </group>
+</menu>

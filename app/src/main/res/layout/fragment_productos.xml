@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="24dp"
+        android:gravity="center_horizontal">
+
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="220dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="12dp"
+            android:scaleType="centerCrop"
+            android:contentDescription="Imagen de moto"
+            app:srcCompat="@drawable/kawa1" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kawasaki Ninja ZX-6R"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="#212121"
+            android:layout_marginBottom="6dp" />
+
+
+        <TextView
+            android:id="@+id/lorem_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Una moto deportiva con un diseño agresivo y un rendimiento imbatible. Ideal para amantes de la velocidad y la adrenalina."
+            android:textSize="14sp"
+            android:lineSpacingExtra="6dp"
+            android:textColor="#424242"
+            android:layout_marginBottom="16dp" />
+
+
+        <TextView
+            android:id="@+id/product_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="$ 12,499 USD"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#388E3C"
+            android:layout_marginBottom="6dp" />
+
+
+        <TextView
+            android:id="@+id/product_stock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Disponibles: 3 unidades"
+            android:textSize="14sp"
+            android:textColor="#757575"
+            android:layout_marginBottom="20dp" />
+
+
+        <Button
+            android:id="@+id/buy_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Añadir al carrito 🛒"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:backgroundTint="#D32F2F"
+            android:padding="12dp" />
+
+    </LinearLayout>
+
+</ScrollView>

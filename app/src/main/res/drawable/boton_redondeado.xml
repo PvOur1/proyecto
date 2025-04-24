@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="true"> //"hover"
+        <shape android:shape="rectangle">
+            <solid android:color="@color/Ciani"/>
+            <stroke android:width="3dp" android:color="@color/Ciani"/>
+            <corners android:radius="15dp"/>
+        </shape>
+    </item>
+    <item>
+        <shape android:shape="rectangle">
+            android:shape="rectangle">
+            <solid android:color="@color/Verde"/>
+            <stroke
+                android:width="3dp"
+                android:color="@color/Blanco"/>
+            <corners android:radius="50dp"/>
+        </shape>
+    </item>
+</selector>
+
