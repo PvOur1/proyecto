@@ -18,7 +18,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.066"
-        app:srcCompat="@drawable/parcial_logo" />
+        app:srcCompat="@drawable/logo" />
 
     <TextView
         android:id="@+id/nameApp_pg2"

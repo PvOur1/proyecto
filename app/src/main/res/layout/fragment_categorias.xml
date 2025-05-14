@@ -48,7 +48,7 @@
                 android:textSize="14sp" />
 
             <Button
-                android:id="@+id/More_button_Electronica"
+                android:id="@+id/More_button_Kawasaki"
                 android:layout_width="60dp"
                 android:layout_height="18dp"
                 android:background="@drawable/boton_redondeado_parcial"
@@ -96,7 +96,7 @@
                 android:textColor="@android:color/darker_gray"
                 android:textSize="14sp" />
             <Button
-                android:id="@+id/More_button_Ropa"
+                android:id="@+id/More_button_KTM"
                 android:layout_width="60dp"
                 android:layout_height="25dp"
                 android:text="Ver Mas"
@@ -145,7 +145,7 @@
                 android:textColor="@android:color/darker_gray"
                 android:textSize="14sp" />
             <Button
-                android:id="@+id/More_button_Hogar"
+                android:id="@+id/More_button_Yamaha"
                 android:layout_width="60dp"
                 android:layout_height="25dp"
                 android:text="Ver Mas"
@@ -193,7 +193,7 @@
                 android:textColor="@android:color/darker_gray"
                 android:textSize="14sp" />
             <Button
-                android:id="@+id/More_button_Deportes"
+                android:id="@+id/More_button_Ducati"
                 android:layout_width="60dp"
                 android:layout_height="25dp"
                 android:text="Ver Mas"
@@ -242,7 +242,7 @@
                 android:textColor="@android:color/darker_gray"
                 android:textSize="14sp" />
             <Button
-                android:id="@+id/More_button_Accesorios"
+                android:id="@+id/More_button_Suzuki"
                 android:layout_width="60dp"
                 android:layout_height="25dp"
                 android:text="Ver Mas"

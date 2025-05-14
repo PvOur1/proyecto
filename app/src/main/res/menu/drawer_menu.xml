@@ -18,20 +18,20 @@
             android:id="@+id/CategoriasFragment"
             android:title="@string/categorias" />
         <item
-            android:id="@+id/electronicaFragment"
-            android:title="• Electrónica" />
+            android:id="@+id/KawasakiFragment"
+            android:title="• Kawasaki" />
         <item
-            android:id="@+id/ropaFragment"
-            android:title="• Ropa" />
+            android:id="@+id/KtmFragment"
+            android:title="• Ktm" />
         <item
-            android:id="@+id/hogarFragment"
-            android:title="• Hogar" />
+            android:id="@+id/YamahaFragment"
+            android:title="• Yamaha" />
         <item
-            android:id="@+id/deportesFragment"
-            android:title="• Deportes" />
+            android:id="@+id/DucatiFragment"
+            android:title="• Ducati" />
         <item
-            android:id="@+id/accesoriosFragment"
-            android:title="• Accesorios" />
+            android:id="@+id/SuzukiFragment"
+            android:title="• Suzuki" />
         <item
             android:id="@+id/editarPerfilFragment"
             android:title="@string/editar_perfil" />
