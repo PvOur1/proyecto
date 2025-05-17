@@ -1,30 +1,47 @@
 package com.example.taller2.fragments
 
+import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
 import com.example.taller2.R
 
 class PerfilFragment : Fragment() {
 
     override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
+        inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_perfil, container, false)
 
+        Log.d("ProfileFragment", "onCreateView ejecutado")
 
-        val editProfileButton = view.findViewById<Button>(R.id.edit_profile_button)
+        val nombresTextView = view.findViewById<TextView>(R.id.tvNombres)
+        val apellidosTextView = view.findViewById<TextView>(R.id.tvApellidos)
+        val correoTextView = view.findViewById<TextView>(R.id.tvCorreo)
+        val telefonoTextView = view.findViewById<TextView>(R.id.tvTelefono)
 
+        val sharedPreferences = requireContext().getSharedPreferences("UserPrefs", Context.MODE_PRIVATE)
+        val nombres = sharedPreferences.getString("nombres", "juan")
+        val apellidos = sharedPreferences.getString("apellidos", "hernandez")
+        val correo = sharedPreferences.getString("correo", "No registrado")
+        val telefono = sharedPreferences.getString("telefono", "3105853456")
 
-        editProfileButton.setOnClickListener {
+        nombresTextView.text = nombres
+        apellidosTextView.text = apellidos
+        correoTextView.text = correo
+        telefonoTextView.text = telefono
 
-            findNavController().navigate(R.id.action_perfilFragment_to_editarPerfilFragment)
+        val btnEditar = view.findViewById<Button>(R.id.btnEditar)
+        val btnCentral = view.findViewById<Button>(R.id.actividad_central)
+
+        btnEditar.setOnClickListener {
+            Log.d("ProfileFragment", "Botón Editar presionado")
         }
 
         return view

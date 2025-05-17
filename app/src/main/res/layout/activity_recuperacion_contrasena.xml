@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
-    android:background="@color/Gris">
+    android:background="@drawable/cambiocontrasena">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -19,7 +19,7 @@
             android:layout_height="120dp"
             android:layout_marginBottom="16dp"
             android:contentDescription="Logo de la aplicación"
-            android:src="@drawable/parcial_logo" />
+            android:src="@drawable/logomototracer" />
 
         <!-- Mensaje instructivo -->
         <TextView

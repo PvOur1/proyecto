@@ -2,18 +2,18 @@
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:state_pressed="true"> //"hover"
         <shape android:shape="rectangle">
-            <solid android:color="@color/azul_claro_parcial"/>
-            <stroke android:width="3dp" android:color="@color/azul_claro_parcial"/>
+            <solid android:color="@color/Morado_parcial"/>
+            <stroke android:width="3dp" android:color="@color/Morado_parcial"/>
             <corners android:radius="15dp"/>
         </shape>
     </item>
     <item>
         <shape android:shape="rectangle">
             android:shape="rectangle">
-            <solid android:color="@color/azul_claro_parcial"/>
+            <solid android:color="@color/Gris"/>
             <stroke
                 android:width="3dp"
-                android:color="@color/azul_oscuro_parcial"/>
+                android:color="@color/Gris"/>
             <corners android:radius="50dp"/>
         </shape>
     </item>

@@ -5,20 +5,8 @@
     android:id="@+id/pg_principal"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#919195"
+    android:background="@drawable/index"
     tools:context=".activities.IndexActivity">
-
-    <ImageView
-        android:id="@+id/icon_pg2"
-        android:layout_width="180dp"
-        android:layout_height="192dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.066"
-        app:srcCompat="@drawable/parcial_logo" />
 
     <TextView
         android:id="@+id/nameApp_pg2"
@@ -28,19 +16,19 @@
         android:text="@string/app_name"
         android:textAllCaps="false"
         android:textColor="@color/Blanco"
-        android:textSize="48sp"
+        android:textSize="34sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/icon_pg2"
-        app:layout_constraintVertical_bias="0.086" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.112" />
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="317dp"
-        android:layout_height="87dp"
+        android:layout_width="291dp"
+        android:layout_height="38dp"
         android:fontFamily="sans-serif-condensed"
         android:text="@string/Texto1"
         android:textAlignment="center"
@@ -50,7 +38,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nameApp_pg2"
-        app:layout_constraintVertical_bias="0.117" />
+        app:layout_constraintVertical_bias="0.042" />
 
     <Button
         android:id="@+id/btnComienza_pg2"
@@ -59,14 +47,14 @@
         android:background="@drawable/boton_redondeado_parcial"
 
         android:text="@string/btnComenzar"
-        android:textColor="@color/Blanco"
+        android:textColor="@color/Negro"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:layout_constraintVertical_bias="0.215"
+        app:layout_constraintVertical_bias="0.866"
         app:rippleColor="@color/Blanco" />
 
     <TextView
@@ -80,6 +68,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnComienza_pg2"
-        app:layout_constraintVertical_bias="0.294" />
+        app:layout_constraintVertical_bias="0.533" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

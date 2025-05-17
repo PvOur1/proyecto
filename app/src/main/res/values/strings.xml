@@ -1,6 +1,6 @@
 <resources>
-    <string name="app_name">MOTOTRACER</string>
-    <string name="Texto1">Inicia una nueva aventura con MotoTracer y descubre una nueva forma de ver el mundo.</string>
+    <string name="app_name">MOTOTRACER X</string>
+    <string name="Texto1">Encuentra tu compañera ideal.</string>
     <string name="btnComenzar">Comienza</string>
     <string name="btnRegistrar">Registrate</string>
     <string name="TxtLogin">La aventura esta por iniciar, porfavor inicia sesion</string>

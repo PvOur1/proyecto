@@ -3,19 +3,23 @@ package com.example.taller2.activities
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.taller2.R
+import com.example.taller2.activities.models.LoginRequest
+import com.example.taller2.activities.models.LoginResponse
+import com.example.taller2.activities.network.RetrofitClient
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
-        Log.d("LoginActivity", "onCreate ejecutado")
 
         val editTextCorreo: EditText = findViewById(R.id.int_name_pg3)
         val editTextContrasena: EditText = findViewById(R.id.int_psw_pg3)
@@ -23,61 +27,58 @@ class LoginActivity : AppCompatActivity() {
         val tvRecuperarContrasena: TextView = findViewById(R.id.ReCuenta_pg3)
         val tvRegistrar: TextView = findViewById(R.id.tvRegistrar)
 
-        val sharedPreferences = getSharedPreferences("UserPrefs", Context.MODE_PRIVATE)
-        val correoGuardado = sharedPreferences.getString("correo", "")
-        val contrasenaGuardada = sharedPreferences.getString("contrasena", "")
-
         btnIngresar.setOnClickListener {
             val correoIngresado = editTextCorreo.text.toString().trim()
             val contrasenaIngresada = editTextContrasena.text.toString().trim()
 
-            if (correoIngresado == correoGuardado && contrasenaIngresada == contrasenaGuardada) {
-                Log.d("LoginActivity", "Inicio de sesión exitoso")
-                Toast.makeText(this, "Inicio de sesión exitoso", Toast.LENGTH_SHORT).show()
-                val intent = Intent(this, MainActivity::class.java)
-                startActivity(intent)
-                finish()
-            } else {
-                Log.d("LoginActivity", "Correo o contraseña incorrectos")
-                Toast.makeText(this, "Correo o contraseña incorrectos", Toast.LENGTH_SHORT).show()
+            if (correoIngresado.isEmpty() || contrasenaIngresada.isEmpty()) {
+                Toast.makeText(this, "Por favor ingresa correo y contraseña", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
             }
+
+            val loginRequest = LoginRequest(email = correoIngresado, password = contrasenaIngresada)
+
+            RetrofitClient.instance.login(loginRequest)
+                .enqueue(object : Callback<LoginResponse> {
+                    override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {
+                        if (response.isSuccessful && response.body() != null) {
+                            val loginResponse = response.body()!!
+                            Toast.makeText(this@LoginActivity, "Inicio exitoso! Token: ${loginResponse.access_token}", Toast.LENGTH_LONG).show()
+
+                            // Guardar datos en SharedPreferences si quieres
+                            val sharedPref = getSharedPreferences("UserPrefs", Context.MODE_PRIVATE)
+                            with(sharedPref.edit()) {
+                                putString("correo", correoIngresado)
+                                putString("contrasena", contrasenaIngresada)
+                                apply()
+                            }
+
+                            // Navegar a MainActivity
+                            val intent = Intent(this@LoginActivity, MainActivity::class.java)
+                            startActivity(intent)
+                            finish()
+
+                        } else {
+                            Toast.makeText(this@LoginActivity, "Error en credenciales", Toast.LENGTH_SHORT).show()
+                        }
+                    }
+
+                    override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
+                        Toast.makeText(this@LoginActivity, "Error de conexión: ${t.message}", Toast.LENGTH_SHORT).show()
+                    }
+                })
         }
 
         tvRegistrar.setOnClickListener {
-            Log.d("LoginActivity", "Navegando a RegisterActivity")
             val intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)
         }
 
         tvRecuperarContrasena.setOnClickListener {
-            Log.d("LoginActivity", "Navegando a RecuperarContrasena")
             val intent = Intent(this, RecuperarContrasena::class.java)
             startActivity(intent)
         }
     }
-
-    override fun onStart() {
-        super.onStart()
-        Log.d("LoginActivity", "onStart ejecutado")
-    }
-
-    override fun onResume() {
-        super.onResume()
-        Log.d("LoginActivity", "onResume ejecutado")
-    }
-
-    override fun onPause() {
-        super.onPause()
-        Log.d("LoginActivity", "onPause ejecutado")
-    }
-
-    override fun onStop() {
-        super.onStop()
-        Log.d("LoginActivity", "onStop ejecutado")
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        Log.d("LoginActivity", "onDestroy ejecutado")
-    }
 }
+
+
