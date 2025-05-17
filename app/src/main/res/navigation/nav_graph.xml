@@ -61,62 +61,62 @@
             android:id="@+id/action_CategoriasFragment_to_inicioFragment"
             app:destination="@id/inicioFragment" />
         <action
-            android:id="@+id/action_CategoriasFragment_to_accesoriosFragment"
-            app:destination="@id/accesoriosFragment" />
+            android:id="@+id/action_CategoriasFragment_to_SuzukiFragment"
+            app:destination="@id/SuzukiFragment" />
         <action
-            android:id="@+id/action_CategoriasFragment_to_ropaFragment"
-            app:destination="@id/ropaFragment" />
+            android:id="@+id/action_CategoriasFragment_to_KtmFragment"
+            app:destination="@id/KTMFragment" />
         <action
-            android:id="@+id/action_CategoriasFragment_to_hogarFragment"
-            app:destination="@id/hogarFragment" />
+            android:id="@+id/action_CategoriasFragment_to_YamahaFragment"
+            app:destination="@id/YamahaFragment" />
         <action
-            android:id="@+id/action_CategoriasFragment_to_deporteFragment"
-            app:destination="@id/deportesFragment" />
+            android:id="@+id/action_CategoriasFragment_to_DucatiFragment"
+            app:destination="@id/DucatiFragment" />
         <action
-            android:id="@+id/action_CategoriasFragment_to_electronicaFragment"
-            app:destination="@id/electronicaFragment" />
+            android:id="@+id/action_CategoriasFragment_to_KawasakiFragment"
+            app:destination="@id/KawasakiFragment" />
     </fragment>
 
     <fragment
-        android:id="@+id/ropaFragment"
-        android:name="com.example.taller2.fragments.RopaFragment"
+        android:id="@+id/KTMFragment"
+        android:name="com.example.taller2.fragments.KtmFragment"
         android:label="Ropa">
         <action
-            android:id="@+id/action_ropaFragment_to_CategoriasFragment"
+            android:id="@+id/action_KTMFragment_to_CategoriasFragment"
             app:destination="@id/CategoriasFragment" />
 </fragment>
 
     <fragment
-        android:id="@+id/hogarFragment"
-        android:name="com.example.taller2.fragments.HogarFragment"
+        android:id="@+id/YamahaFragment"
+        android:name="com.example.taller2.fragments.YamahaFragment"
         android:label="Hogar" />
     <action
-        android:id="@+id/action_hogarFragment_to_CategoriasFragment"
+        android:id="@+id/action_YamahaFragment_to_CategoriasFragment"
         app:destination="@id/CategoriasFragment" />
 
     <fragment
-        android:id="@+id/deportesFragment"
-        android:name="com.example.taller2.fragments.DeporteFragment"
+        android:id="@+id/DucatiFragment"
+        android:name="com.example.taller2.fragments.DucatiFragment"
         android:label="Deportes" />
     <action
-        android:id="@+id/action_deporteFragment_to_CategoriasFragment"
+        android:id="@+id/action_DucatiFragment_to_CategoriasFragment"
         app:destination="@id/CategoriasFragment" />
 
     <fragment
-        android:id="@+id/accesoriosFragment"
-        android:name="com.example.taller2.fragments.AccesoriosFragment"
+        android:id="@+id/SuzukiFragment"
+        android:name="com.example.taller2.fragments.SuzukiFragment"
         android:label="Accesorios" >
         <action
-            android:id="@+id/action_accesoriosFragment_to_CategoriasFragment"
+            android:id="@+id/action_SuzukiFragment_to_CategoriasFragment"
             app:destination="@id/CategoriasFragment" />
     </fragment>
 
     <fragment
-        android:id="@+id/electronicaFragment"
-        android:name="com.example.taller2.fragments.ElectronicaFragment"
+        android:id="@+id/KawasakiFragment"
+        android:name="com.example.taller2.fragments.KawasakiFragment"
         android:label="Electrónica" />
     <action
-        android:id="@+id/action_electronicaFragment_to_CategoriasFragment"
+        android:id="@+id/action_KawasakiFragment_to_CategoriasFragment"
         app:destination="@id/CategoriasFragment" />
     <fragment
         android:id="@+id/tiendaFragment"

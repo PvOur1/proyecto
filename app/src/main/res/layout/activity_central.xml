@@ -23,7 +23,7 @@
             android:id="@+id/icono_parcial_central"
             android:layout_width="310dp"
             android:layout_height="328dp"
-            app:srcCompat="@drawable/parcial_logo" />
+            app:srcCompat="@drawable/logo" />
 
         <EditText
             android:id="@+id/edtPeso"
