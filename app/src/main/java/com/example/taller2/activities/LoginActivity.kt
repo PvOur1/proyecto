@@ -53,6 +53,7 @@ class LoginActivity : AppCompatActivity() {
 
                             val sharedPreferences = getSharedPreferences("UserPrefs", Context.MODE_PRIVATE)
                             val editor = sharedPreferences.edit()
+                            editor.putString("token", loginResponse.access_token)
                             editor.putInt("idUsuario", user.id)
                             editor.putString("nombre", user.nombre)
                             editor.putString("apellido", user.apellido)

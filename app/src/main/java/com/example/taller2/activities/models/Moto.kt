@@ -9,7 +9,7 @@ package com.example.taller2.activities.models
      val año : String,
      val precio : String,
      val descripcion : String,
-     val imagenes : String,
+     val images : String,
      val kilometraje : String,
      val combustible : String,
      val transmision:String,
