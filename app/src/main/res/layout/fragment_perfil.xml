@@ -1,116 +1,66 @@
-<?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fillViewport="true"
+    android:background="@drawable/perfil">
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="center_horizontal"
         android:padding="24dp">
 
-        <!-- Imagen de perfil -->
-        <ImageView
-            android:id="@+id/imgPerfil"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            android:src="@drawable/hombre"
-            android:contentDescription="Imagen de perfil"
-            android:layout_marginBottom="20dp"
-            android:scaleType="centerCrop"
-            />
-
-        <!-- Campo de nombres -->
         <TextView
-            android:id="@+id/tvNombresLabel"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Nombres"
-            android:textStyle="bold"/>
+            android:id="@+id/nombreTextView"
+            android:layout_width="189dp"
+            android:layout_height="17dp"
+            android:text="Nombre"
+            android:textStyle="bold"
+            android:textColor="@color/Negro"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.873"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+
+            app:layout_constraintVertical_bias="0.064" />
 
         <TextView
-            android:id="@+id/tvNombres"
-            android:layout_width="match_parent"
+            android:id="@+id/correoTextView"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Juan Sebastián"
-            android:textSize="16sp"
-            android:padding="8dp"
-            android:background="@android:drawable/editbox_background"
-            android:layout_marginBottom="12dp"/>
-
-        <!-- Campo de apellidos -->
-        <TextView
-            android:id="@+id/tvApellidosLabel"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Apellidos"
-            android:textStyle="bold"/>
+            android:text="Correo"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.085"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.197" />
 
         <TextView
-            android:id="@+id/tvApellidos"
-            android:layout_width="match_parent"
+            android:id="@+id/telefonoTextView"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Hernández López"
-            android:textSize="16sp"
-            android:padding="8dp"
-            android:background="@android:drawable/editbox_background"
-            android:layout_marginBottom="12dp"/>
-
-        <!-- Campo de correo -->
-        <TextView
-            android:id="@+id/tvCorreoLabel"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Correo electrónico"
-            android:textStyle="bold"/>
+            android:text="Telefono"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.088"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/correoTextView"
+            app:layout_constraintVertical_bias="0.0" />
 
         <TextView
-            android:id="@+id/tvCorreo"
-            android:layout_width="match_parent"
+            android:id="@+id/cantifafTextView"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="juan.hernandez@email.com"
-            android:textSize="16sp"
-            android:padding="8dp"
-            android:background="@android:drawable/editbox_background"
-            android:layout_marginBottom="12dp"/>
+            android:text="0"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.406"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/nombreTextView"
+            app:layout_constraintVertical_bias="0.024" />
 
-        <!-- Campo de teléfono -->
-        <TextView
-            android:id="@+id/tvTelefonoLabel"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Número de teléfono"
-            android:textStyle="bold"/>
-
-        <TextView
-            android:id="@+id/tvTelefono"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="+57 300 123 4567"
-            android:textSize="16sp"
-            android:padding="8dp"
-            android:background="@android:drawable/editbox_background"
-            android:layout_marginBottom="20dp"/>
-
-        <!-- Botón de Editar -->
-        <Button
-            android:id="@+id/btnEditar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/boton_redondeado_parcial"
-            android:padding="12dp"
-            android:text="Editar Perfil"
-            android:textColor="@android:color/white" />
-
-        <Button
-            android:id="@+id/actividad_central"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/boton_redondeado_parcial"
-            android:padding="12dp"
-            android:text="Actividad del parcial"
-            android:textColor="@android:color/white" />
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

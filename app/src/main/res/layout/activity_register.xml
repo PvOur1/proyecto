@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#919195"
+    android:background="@color/Blanco"
     android:fillViewport="true"
     tools:context=".activities.RegisterActivity">
 
@@ -22,7 +22,7 @@
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:layout_gravity="center"
-            app:srcCompat="@drawable/logo" />
+            app:srcCompat="@drawable/logomototracer" />
 
         <!-- NOMBRE DE LA APP -->
         <TextView
@@ -65,13 +65,13 @@
             android:inputType="textPersonName"
             android:padding="10dp"/>
 
-        <!-- INPUT: CORREO ELECTRÓNICO -->
+        <!-- INPUT: EDAD -->
         <EditText
-            android:id="@+id/edtCorreo"
+            android:id="@+id/edtEdad"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Correo Electrónico"
-            android:inputType="textEmailAddress"
+            android:hint="Edad"
+            android:inputType="number"
             android:padding="10dp"/>
 
         <!-- INPUT: TELÉFONO -->
@@ -81,6 +81,33 @@
             android:layout_height="wrap_content"
             android:hint="Teléfono"
             android:inputType="phone"
+            android:padding="10dp"/>
+
+        <!-- INPUT: CORREO ELECTRÓNICO -->
+        <EditText
+            android:id="@+id/edtCorreo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Correo Electrónico"
+            android:inputType="textEmailAddress"
+            android:padding="10dp"/>
+
+        <!-- INPUT: DIRECCIÓN -->
+        <EditText
+            android:id="@+id/edtDireccion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Dirección"
+            android:inputType="textPostalAddress"
+            android:padding="10dp"/>
+
+        <!-- INPUT: ROL -->
+        <EditText
+            android:id="@+id/edtRol"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Rol"
+            android:inputType="text"
             android:padding="10dp"/>
 
         <!-- INPUT: CONTRASEÑA -->
