@@ -2,12 +2,16 @@
 
     import android.content.Intent
     import android.os.Bundle
+    import android.widget.Button
+    import android.widget.LinearLayout
     import androidx.appcompat.app.ActionBarDrawerToggle
     import androidx.appcompat.app.AppCompatActivity
     import androidx.appcompat.widget.Toolbar
     import androidx.drawerlayout.widget.DrawerLayout
     import androidx.navigation.NavController
+    import androidx.navigation.findNavController
     import androidx.navigation.fragment.NavHostFragment
+    import androidx.navigation.fragment.findNavController
     import androidx.navigation.ui.AppBarConfiguration
     import androidx.navigation.ui.setupActionBarWithNavController
     import androidx.navigation.ui.setupWithNavController
@@ -35,7 +39,19 @@
 
             drawerLayout = findViewById(R.id.drawer_layout)
             val navView = findViewById<NavigationView>(R.id.nav_view)
-
+            val navController = findNavController(R.id.nav_host_fragment)
+            val btn_inicio = findViewById<LinearLayout>(R.id.btn_inicio)
+            val btn_tiendas = findViewById<LinearLayout>(R.id.btn_tiendas)
+            val btn_carrito = findViewById<LinearLayout>(R.id.btn_carrito)
+            btn_inicio.setOnClickListener {
+                navController.navigate(R.id.inicioFragment)
+            }
+            btn_carrito.setOnClickListener {
+                navController.navigate(R.id.carritoFragment)
+            }
+            btn_tiendas.setOnClickListener {
+                navController.navigate(R.id.tiendaFragment)
+            }
             drawerToggle = ActionBarDrawerToggle(
                 this, drawerLayout, toolbar, R.string.open_drawer, R.string.close_drawer
             )
