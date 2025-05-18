@@ -3,6 +3,7 @@ package com.example.taller2.activities
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
@@ -11,7 +12,11 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.taller2.R
 import com.example.taller2.activities.models.LoginRequest
 import com.example.taller2.activities.models.LoginResponse
+import com.example.taller2.activities.models.Moto
 import com.example.taller2.activities.network.RetrofitClient
+import com.example.taller2.fragments.PerfilFragment
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -42,18 +47,51 @@ class LoginActivity : AppCompatActivity() {
                 .enqueue(object : Callback<LoginResponse> {
                     override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {
                         if (response.isSuccessful && response.body() != null) {
+
                             val loginResponse = response.body()!!
+                            val user = loginResponse.user
+
+                            val sharedPreferences = getSharedPreferences("UserPrefs", Context.MODE_PRIVATE)
+                            val editor = sharedPreferences.edit()
+                            editor.putInt("idUsuario", user.id)
+                            editor.putString("nombre", user.nombre)
+                            editor.putString("apellido", user.apellido)
+                            editor.putString("edad", user.edad)
+                            editor.putString("telefono", user.telefono)
+                            editor.putString("correo", user.correo)
+                            editor.putString("direccion", user.direccion)
+                            editor.putString("rol", user.rol)
+
+                            // Convertir y guardar lista de motos como JSON
+                            val motosJson = Gson().toJson(user.motos)
+                            editor.putString("motos", motosJson)
+                            editor.apply()
+
+                            // Leer motos y contarlas
+                            val motosGuardadasJson = sharedPreferences.getString("motos", null)
+                            if (motosGuardadasJson != null) {
+                                val tipoLista = object : TypeToken<List<Moto>>() {}.type
+                                val listaMotos: List<Moto> = Gson().fromJson(motosGuardadasJson, tipoLista)
+
+
+
+                                val cantidadMotos = listaMotos.size
+                                editor.putInt("cantidadMotos", cantidadMotos)
+                                editor.apply()
+
+
+
+                            }
+
                             Toast.makeText(this@LoginActivity, "Inicio exitoso! Token: ${loginResponse.access_token}", Toast.LENGTH_LONG).show()
 
-                            // Guardar datos en SharedPreferences si quieres
-                            val sharedPref = getSharedPreferences("UserPrefs", Context.MODE_PRIVATE)
-                            with(sharedPref.edit()) {
+                            // Guardar correo y contraseña por aparte
+                            with(sharedPreferences.edit()) {
                                 putString("correo", correoIngresado)
                                 putString("contrasena", contrasenaIngresada)
                                 apply()
                             }
 
-                            // Navegar a MainActivity
                             val intent = Intent(this@LoginActivity, MainActivity::class.java)
                             startActivity(intent)
                             finish()
@@ -80,5 +118,3 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 }
-
-

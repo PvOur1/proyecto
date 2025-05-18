@@ -1,5 +1,6 @@
     package com.example.taller2.activities
 
+    import android.content.Intent
     import android.os.Bundle
     import androidx.appcompat.app.ActionBarDrawerToggle
     import androidx.appcompat.app.AppCompatActivity
@@ -12,7 +13,7 @@
     import androidx.navigation.ui.setupWithNavController
     import com.example.taller2.R
     import com.google.android.material.navigation.NavigationView
-
+    import com.example.taller2.activities.LoginActivity
 
     class MainActivity : AppCompatActivity() {
 
@@ -22,11 +23,9 @@
         private lateinit var toolbar: Toolbar
         private lateinit var drawerToggle: ActionBarDrawerToggle
 
-
         override fun onCreate(savedInstanceState: Bundle?) {
             super.onCreate(savedInstanceState)
             setContentView(R.layout.activity_main)
-
 
             toolbar = findViewById(R.id.toolbar)
             setSupportActionBar(toolbar)
@@ -38,7 +37,7 @@
             val navView = findViewById<NavigationView>(R.id.nav_view)
 
             drawerToggle = ActionBarDrawerToggle(
-                this,drawerLayout,toolbar,R.string.open_drawer,R.string.close_drawer
+                this, drawerLayout, toolbar, R.string.open_drawer, R.string.close_drawer
             )
             drawerLayout.addDrawerListener(drawerToggle)
             drawerToggle.syncState()
@@ -56,9 +55,10 @@
             )
             setupActionBarWithNavController(navController, appBarConfiguration)
             navView.setupWithNavController(navController)
-
         }
+
         override fun onSupportNavigateUp(): Boolean {
             return navController.navigateUp() || super.onSupportNavigateUp()
         }
     }
+

@@ -21,28 +21,28 @@ class Profile : AppCompatActivity() {
         val telefonoTextView = findViewById<TextView>(R.id.tvTelefono)
 
         val sharedPreferences = getSharedPreferences("UserPrefs", Context.MODE_PRIVATE)
-        val nombres = sharedPreferences.getString("nombres", "juan")
-        val apellidos = sharedPreferences.getString("apellidos", "hernandez")
-        val correo = sharedPreferences.getString("correo", "No registrado")
-        val telefono = sharedPreferences.getString("telefono", "3105853456")
+        val nombre = sharedPreferences.getString("nombre", "")
+        val apellido = sharedPreferences.getString("apellido","")
+        val correo = sharedPreferences.getString("correo", "")
+        val telefono = sharedPreferences.getString("telefono", "")
 
-        nombresTextView.text = nombres
-        apellidosTextView.text = apellidos
+        nombresTextView.text = nombre
+        apellidosTextView.text = apellido
         correoTextView.text = correo
         telefonoTextView.text = telefono
 
-        val btnEditar = findViewById<Button>(R.id.btnEditar)
-        val btnCentral = findViewById<Button>(R.id.actividad_central)
+        //val btnEditar = findViewById<Button>(R.id.btnEditar)
+       // val btnCentral = findViewById<Button>(R.id.actividad_central)
 
-        btnCentral.setOnClickListener {
-            Log.d("LoginActivity", "Navegando a CentralActivity")
-            val intent = Intent(this, CentralActivity::class.java)
-            startActivity(intent)
-        }
-        btnEditar.setOnClickListener {
-            Log.d("ProfileActivity", "Botón Editar presionado")
-        }
-    }
+//        btnCentral.setOnClickListener {
+//            Log.d("LoginActivity", "Navegando a CentralActivity")
+//            val intent = Intent(this, CentralActivity::class.java)
+//            startActivity(intent)
+//        }
+//        btnEditar.setOnClickListener {
+//            Log.d("ProfileActivity", "Botón Editar presionado")
+//        }
+ }
 
     override fun onStart() {
         super.onStart()
