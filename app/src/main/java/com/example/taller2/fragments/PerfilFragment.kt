@@ -46,11 +46,13 @@ class PerfilFragment : Fragment() {
                 putString("modelo", moto.modelo)
                 putString("descripcion", moto.descripcion)
                 putString("imagen", moto.images)
+                putString("precio", moto.precio)
+                putString("kilometraje", moto.kilometraje)
             }
             fragment.arguments = args
 
             parentFragmentManager.beginTransaction()
-                .replace(R.id.nav_host_fragment, fragment) // Asegúrate de usar el ID correcto
+                .replace(R.id.nav_host_fragment, fragment)
                 .addToBackStack(null)
                 .commit()
         }
