@@ -1,5 +1,7 @@
 package com.example.taller2.activities.network
 
+import com.example.taller2.activities.Carrito
+import com.example.taller2.activities.models.CarritoModel
 import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.POST
@@ -24,5 +26,12 @@ interface ApiService {
         @Header("Authorization") token: String,
         @Path("idUsuario") idUsuario: Int
     ): Call<List<Moto>>
+
+
+    @GET("carrito/{idUsuario}")
+    fun getCarritoUsuario(
+        @Header("Authorization") token: String,
+        @Path("idUsuario") idUsuario: Int
+    ): Call<CarritoModel>
 
 }

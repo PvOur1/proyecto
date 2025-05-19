@@ -1,53 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
-    android:background="@color/Gris">
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerViewCarrito"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:layout_marginBottom="16dp" />
-
+    android:background="@color/white"
+    android:fillViewport="true">
 
     <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#f2f2f2"
-        android:padding="16dp"
-        android:elevation="4dp"
-        android:layout_marginBottom="16dp">
+        android:padding="16dp">
 
-        <TextView
-            android:id="@+id/total_productos"
-            android:layout_width="wrap_content"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewCarrito"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Total de productos: 0"
-            android:textSize="16sp"
-            android:textColor="#000000" />
+            android:nestedScrollingEnabled="false"
+            android:layout_marginBottom="16dp" />
 
-        <TextView
-            android:id="@+id/precio_total"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Precio total: $0.00"
-            android:textSize="16sp"
-            android:textColor="#000000"
-            android:layout_marginTop="5dp" />
+            android:background="#f2f2f2"
+            android:padding="16dp"
+            android:elevation="4dp"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:id="@+id/total_productos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Total de productos: 0"
+                android:textSize="16sp"
+                android:textColor="#000000" />
+
+            <TextView
+                android:id="@+id/precio_total"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Precio total: $0.00"
+                android:textSize="16sp"
+                android:textColor="#000000"
+                android:layout_marginTop="5dp" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_pagar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Pagar"
+            android:textAllCaps="false"
+            android:background="@drawable/boton_redondeado_parcial"
+            android:textColor="@android:color/white"/>
     </LinearLayout>
-
-    <Button
-        android:id="@+id/btn_pagar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Pagar"
-        android:textAllCaps="false"
-        android:background="@drawable/boton_redondeado_parcial"
-        android:textColor="@android:color/white"/>
-</LinearLayout>
+</ScrollView>

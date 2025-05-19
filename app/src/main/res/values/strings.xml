@@ -22,4 +22,7 @@
     <string name="close_drawer">menu cerrado</string>
     <string name="editar_perfil">Editar Perfil</string>
     <string name="tiendas">Editar Tiendas</string>
+
+    <string name="anio_precio">%1$s · %2$s</string>
+
 </resources>
