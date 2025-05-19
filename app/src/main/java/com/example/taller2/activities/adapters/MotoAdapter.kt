@@ -40,10 +40,13 @@ class MotoAdapter(
             .placeholder(R.drawable.placeholder)
             .into(holder.imagen)
 
+
+
         // Clic sobre el item
         holder.itemView.setOnClickListener {
             onMotoClick(moto) // Llama la función que recibe la moto clickeada
         }
+
     }
 
     class MotoViewHolder(view: View) : RecyclerView.ViewHolder(view) {
