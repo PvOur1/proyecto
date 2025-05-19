@@ -25,4 +25,9 @@ interface ApiService {
         @Path("idUsuario") idUsuario: Int
     ): Call<List<Moto>>
 
+    @GET("motos")
+    fun getMotos(
+        @Header("Authorization") token: String
+    ): Call<List<Moto>>
+
 }
