@@ -1,0 +1,50 @@
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:elevation="4dp"
+    android:foreground="?attr/selectableItemBackground"
+    android:clickable="true">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="12dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/imageMoto"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:scaleType="centerCrop"
+            android:contentDescription="Imagen moto" />
+
+        <TextView
+            android:id="@+id/modeloMoto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kawasaki ZX-6R"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="#212121"
+            android:layout_marginTop="8dp" />
+
+        <TextView
+            android:id="@+id/precioMoto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="$12.499 USD"
+            android:textColor="#388E3C"
+            android:textStyle="bold"
+            android:layout_marginTop="4dp" />
+
+        <TextView
+            android:id="@+id/kilometraje"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kilometraje: 4.500 km"
+            android:textColor="#757575"
+            android:textSize="13sp"
+            android:layout_marginTop="2dp" />
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
