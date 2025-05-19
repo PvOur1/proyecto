@@ -16,18 +16,18 @@ interface ApiService {
     @POST("auth/login")
     fun login(@Body request: LoginRequest): Call<LoginResponse>
 
-        @POST("/usuario")
-        fun registerUser(@Body request: RegisterUser): Call<RegisterUserResponse>
+    @POST("/usuario")
+    fun registerUser(@Body request: RegisterUser): Call<RegisterUserResponse>
 
-        @GET("motos/byuserid/{idUsuario}")
-        fun getMotosUsuario(
-            @Header("Authorization") token: String,
-            @Path("idUsuario") idUsuario: Int
-        ): Call<List<Moto>>
-    @GET("motos/{id}")
-    fun getMotoById(
+    @GET("motos/byuserid/{idUsuario}")
+    fun getMotosUsuario(
         @Header("Authorization") token: String,
-        @Path("id") id: Int
-    ): Call<Moto>
+        @Path("idUsuario") idUsuario: Int
+    ): Call<List<Moto>>
 
-    }
+    @GET("motos")
+    fun getMotos(
+        @Header("Authorization") token: String
+    ): Call<List<Moto>>
+
+}
