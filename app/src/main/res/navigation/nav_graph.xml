@@ -1,5 +1,7 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
     android:id="@+id/nav_graph"
     app:startDestination="@id/inicioFragment">
 
@@ -122,5 +124,11 @@
         android:id="@+id/tiendaFragment"
         android:name="com.example.taller2.fragments.TiendaFragment"
         android:label="@string/tiendas"/>
+    <fragment
+        android:id="@+id/crearMotoFragment"
+        android:name="com.example.taller2.fragments.CrearMotoFragment"
+        android:label="Crear Moto"
+        tools:layout="@layout/fragment_crear_moto" />
+
 
 </navigation>

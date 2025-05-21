@@ -38,6 +38,9 @@
         <item
             android:id="@+id/TiendaFragment"
             android:title="@string/tiendas" />
+        <item
+            android:id="@+id/crearMotoFragment"
+            android:title="Subir Moto" />
 
     </group>
 </menu>
