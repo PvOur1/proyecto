@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/etModelo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Modelo" />
+
+        <EditText
+            android:id="@+id/etTipoMotor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Tipo de Motor" />
+
+        <EditText
+            android:id="@+id/etCilindraje"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Cilindraje" />
+
+        <EditText
+            android:id="@+id/etColor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Color" />
+
+        <EditText
+            android:id="@+id/etAnio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Año" />
+
+        <EditText
+            android:id="@+id/etPrecio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Precio" />
+
+        <EditText
+            android:id="@+id/etDescripcion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Descripción" />
+
+        <EditText
+            android:id="@+id/etImagen"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="URL de la Imagen" />
+
+        <EditText
+            android:id="@+id/etKilometraje"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Kilometraje" />
+
+        <EditText
+            android:id="@+id/etCombustible"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Tipo de Combustible" />
+
+        <EditText
+            android:id="@+id/etTransmision"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Transmisión" />
+
+        <EditText
+            android:id="@+id/etPeso"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Peso" />
+
+        <EditText
+            android:id="@+id/etPotencia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Potencia" />
+
+        <Button
+            android:id="@+id/btnGuardarMoto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Guardar Moto"
+            android:layout_marginTop="16dp" />
+    </LinearLayout>
+</ScrollView>

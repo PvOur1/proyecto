@@ -20,3 +20,4 @@ package com.example.taller2.activities.models
      val fecha_actualizacion : String
 
  )
+
