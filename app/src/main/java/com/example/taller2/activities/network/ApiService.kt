@@ -1,19 +1,23 @@
 package com.example.taller2.activities.network
 
-import com.example.taller2.activities.models.*
+import com.example.taller2.activities.models.CarritoModel
 import retrofit2.Call
 import retrofit2.http.Body
+import retrofit2.http.POST
+import com.example.taller2.activities.models.LoginRequest
+import com.example.taller2.activities.models.LoginResponse
+import com.example.taller2.activities.models.Moto
+import com.example.taller2.activities.models.RegisterUser
+import com.example.taller2.activities.models.RegisterUserResponse
 import retrofit2.http.GET
 import retrofit2.http.Header
-import retrofit2.http.POST
 import retrofit2.http.Path
 
 interface ApiService {
-
     @POST("auth/login")
     fun login(@Body request: LoginRequest): Call<LoginResponse>
 
-    @POST("usuario")
+    @POST("/usuario")
     fun registerUser(@Body request: RegisterUser): Call<RegisterUserResponse>
 
     @GET("motos/byuserid/{idUsuario}")
@@ -28,16 +32,10 @@ interface ApiService {
         @Path("idUsuario") idUsuario: Int
     ): Call<CarritoModel>
 
+
     @GET("motos")
     fun getMotos(
         @Header("Authorization") token: String
     ): Call<List<Moto>>
 
-    // Login con Google (envía token en el body como {"token": "el_token"})
-    @POST("auth/google")
-    fun sendToken(@Body tokenRequest: TokenRequest): Call<LoginResponse>
 }
-
-// Modelo para enviar token Google
-data class TokenRequest(val token: String)
-

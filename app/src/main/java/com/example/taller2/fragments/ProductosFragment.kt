@@ -16,36 +16,26 @@ class ProductosFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_productos, container, false)
+        return inflater.inflate(R.layout.fragment_productos, container, false)
+    }
 
-        val modeloTextView = view.findViewById<TextView>(R.id.tvModelo)
-        val descripcionTextView = view.findViewById<TextView>(R.id.tvDescripcion)
-        val imageView = view.findViewById<ImageView>(R.id.ivMoto)
-        val precioTextView = view.findViewById<TextView>(R.id.tvPrecio)
-        val kilometrajeTextView = view.findViewById<TextView>(R.id.tvKilometraje)
-        val colorTextView = view.findViewById<TextView>(R.id.tvColor)
-        val anioTextView = view.findViewById<TextView>(R.id.tvAnio)
-        val combustibleTextView = view.findViewById<TextView>(R.id.tvCombustible)
-        val transmisionTextView = view.findViewById<TextView>(R.id.tvTransmision)
-        val tipoMotorTextView = view.findViewById<TextView>(R.id.tvTipoMotor)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
-        val args = arguments
+        val modelo = arguments?.getString("modelo")
+        val descripcion = arguments?.getString("descripcion")
+        val imagen = arguments?.getString("imagen")
+        val precio = arguments?.getString("precio")
+        val kilometraje = arguments?.getString("kilometraje")
 
-        modeloTextView.text = args?.getString("modelo")
-        descripcionTextView.text = args?.getString("descripcion")
-        precioTextView.text = "$${args?.getString("precio")}"
-        kilometrajeTextView.text = "Kilometraje: ${args?.getString("kilometraje")}"
-        colorTextView.text = "Color: ${args?.getString("color")}"
-        anioTextView.text = "Año: ${args?.getString("anio")}"
-        combustibleTextView.text = "Combustible: ${args?.getString("combustible")}"
-        transmisionTextView.text = "Transmisión: ${args?.getString("transmision")}"
-        tipoMotorTextView.text = "Tipo de motor: ${args?.getString("tipo_motor")}"
+        view.findViewById<TextView>(R.id.textModelo).text = modelo
+        view.findViewById<TextView>(R.id.textDescripcion).text = descripcion
+        view.findViewById<TextView>(R.id.textPrecio).text = "Precio: $precio"
+        view.findViewById<TextView>(R.id.textKilometraje).text = "Kilometraje: $kilometraje"
 
-        val imagen = args?.getString("imagen")
         Glide.with(requireContext())
             .load(imagen)
-            .into(imageView)
-
-        return view
+            .placeholder(R.drawable.placeholder)
+            .into(view.findViewById(R.id.imageProducto))
     }
 }
