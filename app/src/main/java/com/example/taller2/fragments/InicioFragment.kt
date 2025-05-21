@@ -51,17 +51,20 @@ class InicioFragment : Fragment() {
         val service = RetrofitClient.instance
         val sharedPreferences = requireContext().getSharedPreferences("UserPrefs", Context.MODE_PRIVATE)
         val tokenNullable = sharedPreferences.getString("token", null)
-        if (tokenNullable.isNullOrEmpty()) {
-            Toast.makeText(requireContext(), "No hay token válido", Toast.LENGTH_SHORT).show()
+        val idUsuario = sharedPreferences.getInt("idUsuario", -1)
+
+        if (tokenNullable.isNullOrEmpty() || idUsuario == -1) {
+            Toast.makeText(requireContext(), "Token o ID de usuario inválido", Toast.LENGTH_SHORT).show()
             return
         }
+
         val token = "Bearer $tokenNullable"
-        service.getMotos(token).enqueue(object : Callback<List<Moto>> {
+        service.getMotosUsuario(token, idUsuario).enqueue(object : Callback<List<Moto>> {
             override fun onResponse(call: Call<List<Moto>>, response: Response<List<Moto>>) {
                 if (response.isSuccessful && response.body() != null) {
                     adapter.setMotos(response.body()!!)
                 } else {
-                    Toast.makeText(requireContext(), "No se encontraron motos", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(requireContext(), "No se encontraron motos del usuario", Toast.LENGTH_SHORT).show()
                 }
             }
 

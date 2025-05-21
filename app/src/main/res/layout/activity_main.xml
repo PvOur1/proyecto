@@ -51,8 +51,7 @@
                 <ImageView
                     android:layout_width="24dp"
                     android:layout_height="24dp"
-                    android:src="@drawable/inicioimg"
-                    android:tint="@color/black" />
+                    android:src="@drawable/inicioimg" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -97,8 +96,7 @@
                 <ImageView
                     android:layout_width="24dp"
                     android:layout_height="24dp"
-                    android:src="@drawable/carritoimg"
-                    android:tint="@color/black" />
+                    android:src="@drawable/carritoimg"/>
 
                 <TextView
                     android:layout_width="wrap_content"
