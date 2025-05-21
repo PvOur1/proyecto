@@ -22,6 +22,8 @@
     <string name="close_drawer">menu cerrado</string>
     <string name="editar_perfil">Editar Perfil</string>
     <string name="tiendas">Editar Tiendas</string>
+    <string name="default_web_client_id">446448742844-9jgsb5bjf265g1it0k9hq59uqvnuvr22.apps.googleusercontent.com</string>
+
 
     <string name="anio_precio">%1$s · %2$s</string>
 

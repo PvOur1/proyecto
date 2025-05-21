@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "446448742844",
+    "project_id": "taller2-64441cdb",
+    "storage_bucket": "taller2-64441cdb.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:446448742844:android:ae07ba9c565a208cf33bb9",
+        "android_client_info": {
+          "package_name": "com.example.taller2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "446448742844-qojc8p8r1fr3e9k3r8l1bibeh35ubng7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.taller2",
+            "certificate_hash": "e79be28a9c8d1b374f7da1c1e64659cfe5797704"
+          }
+        },
+        {
+          "client_id": "446448742844-9jgsb5bjf265g1it0k9hq59uqvnuvr22.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCU5t6Jlh81iFPdMjJclyLLVWoH1y4pUq8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "110440910601086628485",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

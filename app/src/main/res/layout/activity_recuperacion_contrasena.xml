@@ -40,7 +40,7 @@
             android:inputType="textEmailAddress"
             android:padding="12dp"
             android:background="@android:drawable/editbox_background"
-            android:layout_marginBottom="20dp"/>
+            android:layout_marginBottom="10dp"/>
 
         <!-- Botón de Envío -->
         <Button
@@ -51,5 +51,15 @@
             android:text="Enviar Solicitud"
             android:background="@drawable/boton_redondeado_parcial"
             android:textColor="@android:color/white" />
+        <Button
+            android:id="@+id/btnvolver"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:background="@drawable/boton_redondeado_parcial"
+            android:padding="12dp"
+            android:text="Volver"
+            android:textColor="@android:color/white"
+            android:textSize="18sp" />
     </LinearLayout>
 </ScrollView>

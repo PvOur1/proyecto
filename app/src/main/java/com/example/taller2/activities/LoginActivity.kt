@@ -3,34 +3,59 @@ package com.example.taller2.activities
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
-import android.widget.Button
-import android.widget.EditText
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.example.taller2.R
 import com.example.taller2.activities.models.LoginRequest
 import com.example.taller2.activities.models.LoginResponse
 import com.example.taller2.activities.models.Moto
 import com.example.taller2.activities.network.RetrofitClient
-import com.example.taller2.fragments.PerfilFragment
+
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.auth.api.signin.GoogleSignInClient
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
+import com.google.android.gms.common.SignInButton
+import com.google.android.gms.common.api.ApiException
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.GoogleAuthProvider
 
 class LoginActivity : AppCompatActivity() {
+
+    private lateinit var btnIngresar: Button
+    private lateinit var progressBar: ProgressBar
+    private lateinit var googleSignInClient: GoogleSignInClient
+    private val RC_SIGN_IN = 100
+    private fun isEmailValid(email: String): Boolean {
+        return android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
         val editTextCorreo: EditText = findViewById(R.id.int_name_pg3)
         val editTextContrasena: EditText = findViewById(R.id.int_psw_pg3)
-        val btnIngresar: Button = findViewById(R.id.buttonIngresar)
+        btnIngresar = findViewById(R.id.buttonIngresar)
         val tvRecuperarContrasena: TextView = findViewById(R.id.ReCuenta_pg3)
         val tvRegistrar: TextView = findViewById(R.id.tvRegistrar)
+        val btnGoogleSignIn: SignInButton = findViewById(R.id.btnGoogleSignIn)
+
+
+        // Configuración de Google Sign In
+        val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+            .requestIdToken(getString(R.string.default_web_client_id))
+            .requestEmail()
+            .build()
+        googleSignInClient = GoogleSignIn.getClient(this, gso)
+
+        btnGoogleSignIn.setOnClickListener {
+            val signInIntent = googleSignInClient.signInIntent
+            startActivityForResult(signInIntent, RC_SIGN_IN)
+        }
 
         btnIngresar.setOnClickListener {
             val correoIngresado = editTextCorreo.text.toString().trim()
@@ -41,13 +66,21 @@ class LoginActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
+            if (!isEmailValid(correoIngresado)) {
+                Toast.makeText(this, "Correo no válido", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+            btnIngresar.isEnabled = false
+
             val loginRequest = LoginRequest(email = correoIngresado, password = contrasenaIngresada)
 
             RetrofitClient.instance.login(loginRequest)
                 .enqueue(object : Callback<LoginResponse> {
                     override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {
-                        if (response.isSuccessful && response.body() != null) {
+                        btnIngresar.isEnabled = true
 
+                        if (response.isSuccessful && response.body() != null) {
                             val loginResponse = response.body()!!
                             val user = loginResponse.user
 
@@ -63,30 +96,21 @@ class LoginActivity : AppCompatActivity() {
                             editor.putString("direccion", user.direccion)
                             editor.putString("rol", user.rol)
 
-                            // Convertir y guardar lista de motos como JSON
                             val motosJson = Gson().toJson(user.motos)
                             editor.putString("motos", motosJson)
                             editor.apply()
 
-                            // Leer motos y contarlas
                             val motosGuardadasJson = sharedPreferences.getString("motos", null)
                             if (motosGuardadasJson != null) {
                                 val tipoLista = object : TypeToken<List<Moto>>() {}.type
                                 val listaMotos: List<Moto> = Gson().fromJson(motosGuardadasJson, tipoLista)
-
-
-
                                 val cantidadMotos = listaMotos.size
                                 editor.putInt("cantidadMotos", cantidadMotos)
                                 editor.apply()
-
-
-
                             }
 
-                            Toast.makeText(this@LoginActivity, "Inicio exitoso! Token: ${loginResponse.access_token}", Toast.LENGTH_LONG).show()
+                            Toast.makeText(this@LoginActivity, "Inicio exitoso!", Toast.LENGTH_LONG).show()
 
-                            // Guardar correo y contraseña por aparte
                             with(sharedPreferences.edit()) {
                                 putString("correo", correoIngresado)
                                 putString("contrasena", contrasenaIngresada)
@@ -96,26 +120,72 @@ class LoginActivity : AppCompatActivity() {
                             val intent = Intent(this@LoginActivity, MainActivity::class.java)
                             startActivity(intent)
                             finish()
-
                         } else {
-                            Toast.makeText(this@LoginActivity, "Error en credenciales", Toast.LENGTH_SHORT).show()
+                            val errorMsg = response.errorBody()?.string() ?: "Error en credenciales"
+                            Toast.makeText(this@LoginActivity, errorMsg, Toast.LENGTH_SHORT).show()
                         }
                     }
 
                     override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
+                        btnIngresar.isEnabled = true
                         Toast.makeText(this@LoginActivity, "Error de conexión: ${t.message}", Toast.LENGTH_SHORT).show()
                     }
                 })
         }
 
         tvRegistrar.setOnClickListener {
-            val intent = Intent(this, RegisterActivity::class.java)
-            startActivity(intent)
+            startActivity(Intent(this, RegisterActivity::class.java))
         }
 
         tvRecuperarContrasena.setOnClickListener {
-            val intent = Intent(this, RecuperarContrasena::class.java)
-            startActivity(intent)
+            startActivity(Intent(this, RecuperarContrasena::class.java))
         }
     }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        if (requestCode == RC_SIGN_IN) {
+            val task = GoogleSignIn.getSignedInAccountFromIntent(data)
+            try {
+                val account = task.getResult(ApiException::class.java)
+
+                val idToken = account?.idToken
+
+                if (idToken != null) {
+                    // Aquí llamamos a firebaseAuthWithGoogle para autenticar con Firebase
+                    firebaseAuthWithGoogle(idToken)
+                } else {
+                    Toast.makeText(this, "No se pudo obtener el ID token", Toast.LENGTH_SHORT).show()
+                }
+
+            } catch (e: ApiException) {
+                Toast.makeText(this, "Error al iniciar con Google: ${e.message}", Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
+    private fun firebaseAuthWithGoogle(idToken: String) {
+        val auth = FirebaseAuth.getInstance()
+        val credential = GoogleAuthProvider.getCredential(idToken, null)
+
+        auth.signInWithCredential(credential)
+            .addOnCompleteListener(this) { task ->
+                if (task.isSuccessful) {
+                    // El usuario ha iniciado sesión correctamente con Google
+                    val user = auth.currentUser
+                    Toast.makeText(this, "Inicio de sesión con Google exitoso", Toast.LENGTH_SHORT).show()
+
+                    // Aquí puedes guardar los datos del usuario en SharedPreferences si lo deseas
+
+                    val intent = Intent(this, MainActivity::class.java)
+                    startActivity(intent)
+                    finish()
+                } else {
+                    Toast.makeText(this, "Fallo al autenticar con Google", Toast.LENGTH_SHORT).show()
+                }
+            }
+    }
+
+
+
 }

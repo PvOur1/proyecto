@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/iniciosesion">
+    android:background="@drawable/iniciosesion"
+    android:visibility="visible">
 
 
     <EditText
@@ -19,25 +20,10 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.579" />
-
-    <EditText
-        android:id="@+id/int_psw_pg3"
-        android:layout_width="262dp"
-        android:layout_height="37dp"
-        android:background="@drawable/edit_text_rounded"
-        android:ems="10"
-        android:hint="Contraseña"
-        android:inputType="text"
-        android:textColor="@color/Negro"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.678" />
+        app:layout_constraintVertical_bias="0.536" />
 
     <Button
         android:id="@+id/buttonIngresar"
@@ -50,10 +36,35 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/ReCuenta_pg3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/int_psw_pg3"
-        app:layout_constraintVertical_bias="0.757" />
+        app:layout_constraintVertical_bias="0.105" />
+
+    <EditText
+        android:id="@+id/int_psw_pg3"
+        android:layout_width="262dp"
+        android:layout_height="37dp"
+        android:background="@drawable/edit_text_rounded"
+        android:ems="10"
+        android:hint="Contraseña"
+        android:inputType="textPassword"
+        android:textColor="@color/Negro"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.489"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.602" />
+
+    <com.google.android.gms.common.SignInButton
+        android:id="@+id/btnGoogleSignIn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonIngresar" />
 
     <TextView
         android:id="@+id/ReCuenta_pg3"
@@ -66,10 +77,10 @@
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.121"
+        app:layout_constraintHorizontal_bias="0.008"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonIngresar"
-        app:layout_constraintVertical_bias="0.073" />
+        app:layout_constraintTop_toBottomOf="@+id/btnGoogleSignIn"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/txtSinCuenta_pg3"
@@ -109,24 +120,10 @@
         android:layout_height="77dp"
         app:layout_constraintBottom_toTopOf="@+id/int_name_pg3"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/logomototracer" />
-
-    <ImageView
-        android:id="@+id/btnGoogle"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:background="@drawable/boton_redondeado_parcial"
-        android:clickable="true"
-        android:contentDescription="Botón Google"
-        android:focusable="true"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.859"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.995" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

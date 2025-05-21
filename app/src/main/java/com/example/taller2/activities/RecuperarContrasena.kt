@@ -17,6 +17,12 @@ class RecuperarContrasena : AppCompatActivity() {
         setContentView(R.layout.activity_recuperacion_contrasena)
         Log.d("RecuperarContrasena", "onCreate ejecutado")
 
+        val btnVolver = findViewById<Button>(R.id.btnvolver)
+
+        btnVolver.setOnClickListener {
+            finish() // Esto cierra la actividad y vuelve a la anterior
+        }
+
         val imageViewLogo: ImageView = findViewById(R.id.imgLogo)
         val textViewMensajeInstructivo: TextView = findViewById(R.id.tvMensajeInstructivo)
         val editTextCorreoElectronico: EditText = findViewById(R.id.etCorreo)
@@ -42,6 +48,7 @@ class RecuperarContrasena : AppCompatActivity() {
         }
     }
 
+
     override fun onStart() {
         super.onStart()
         Log.d("RecuperarContrasena", "onStart ejecutado")
@@ -66,4 +73,5 @@ class RecuperarContrasena : AppCompatActivity() {
         super.onDestroy()
         Log.d("RecuperarContrasena", "onDestroy ejecutado")
     }
+
 }

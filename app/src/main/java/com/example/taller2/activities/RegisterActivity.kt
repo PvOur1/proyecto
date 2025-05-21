@@ -7,6 +7,7 @@ import android.util.Patterns
 import android.widget.Button
 import android.widget.CheckBox
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.taller2.R
@@ -97,8 +98,9 @@ class RegisterActivity : AppCompatActivity() {
                     Log.d("RegisterActivity", "Las contraseñas no coinciden")
                 }
                 !aceptaTerminos -> {
-                    Toast.makeText(this, "Debe aceptar los términos y condiciones", Toast.LENGTH_SHORT).show()
+                    mostrarDialogoTerminos(checkBoxTerminos)
                     Log.d("RegisterActivity", "Términos y condiciones no aceptados")
+
                 }
                 else -> {
                     // Crear objeto para enviar a API
@@ -112,7 +114,12 @@ class RegisterActivity : AppCompatActivity() {
                         direccion = direccion,
                         rol = rol
                     )
+                    val checkBoxTerminos: CheckBox = findViewById(R.id.chkTerminos)
+                    val txtTerminos: TextView = findViewById(R.id.txtTerminos)
 
+                    txtTerminos.setOnClickListener {
+                        mostrarDialogoTerminos(checkBoxTerminos)
+                    }
                     // Llamada a API
                     val apiService = RetrofitClient.instance
                     val call = apiService.registerUser(registerUser)
@@ -143,7 +150,30 @@ class RegisterActivity : AppCompatActivity() {
                 }
             }
         }
+        val btnVolver = findViewById<Button>(R.id.btnvolver)
+
+        btnVolver.setOnClickListener {
+            finish() // Esto cierra la actividad y vuelve a la anterior
+        }
+
     }
+    private fun mostrarDialogoTerminos(checkBox: CheckBox) {
+        val view = layoutInflater.inflate(R.layout.dialog_terminos, null)
+
+        val builder = androidx.appcompat.app.AlertDialog.Builder(this)
+            .setTitle("Términos y Condiciones")
+            .setView(view)
+            .setPositiveButton("Aceptar") { dialog, _ ->
+                checkBox.isChecked = true
+                dialog.dismiss()
+            }
+            .setNegativeButton("Cancelar") { dialog, _ ->
+                dialog.dismiss()
+            }
+
+        builder.show()
+    }
+
 
     override fun onStart() {
         super.onStart()
