@@ -123,4 +123,5 @@
         android:name="com.example.taller2.fragments.TiendaFragment"
         android:label="@string/tiendas"/>
 
+
 </navigation>

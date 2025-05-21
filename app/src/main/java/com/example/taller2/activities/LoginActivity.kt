@@ -10,7 +10,7 @@ import com.example.taller2.activities.models.LoginRequest
 import com.example.taller2.activities.models.LoginResponse
 import com.example.taller2.activities.models.Moto
 import com.example.taller2.activities.network.RetrofitClient
-import com.example.taller2.activities.network.TokenRequest
+
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import retrofit2.Call
@@ -30,7 +30,9 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var progressBar: ProgressBar
     private lateinit var googleSignInClient: GoogleSignInClient
     private val RC_SIGN_IN = 100
-
+    private fun isEmailValid(email: String): Boolean {
+        return android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
@@ -41,6 +43,7 @@ class LoginActivity : AppCompatActivity() {
         val tvRecuperarContrasena: TextView = findViewById(R.id.ReCuenta_pg3)
         val tvRegistrar: TextView = findViewById(R.id.tvRegistrar)
         val btnGoogleSignIn: SignInButton = findViewById(R.id.btnGoogleSignIn)
+
 
         // Configuración de Google Sign In
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -161,61 +164,28 @@ class LoginActivity : AppCompatActivity() {
             }
         }
     }
-
     private fun firebaseAuthWithGoogle(idToken: String) {
+        val auth = FirebaseAuth.getInstance()
         val credential = GoogleAuthProvider.getCredential(idToken, null)
-        FirebaseAuth.getInstance().signInWithCredential(credential)
+
+        auth.signInWithCredential(credential)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
-                    // Usuario autenticado, ahora obtenemos el token Firebase
-                    FirebaseAuth.getInstance().currentUser?.getIdToken(true)
-                        ?.addOnCompleteListener { tokenTask ->
-                            if (tokenTask.isSuccessful) {
-                                val firebaseIdToken = tokenTask.result?.token
-                                // Enviar token al backend para obtener token propio
-                                enviarTokenAlBackend(firebaseIdToken!!)
-                            } else {
-                                Toast.makeText(this, "Error al obtener token Firebase", Toast.LENGTH_SHORT).show()
-                            }
-                        }
+                    // El usuario ha iniciado sesión correctamente con Google
+                    val user = auth.currentUser
+                    Toast.makeText(this, "Inicio de sesión con Google exitoso", Toast.LENGTH_SHORT).show()
+
+                    // Aquí puedes guardar los datos del usuario en SharedPreferences si lo deseas
+
+                    val intent = Intent(this, MainActivity::class.java)
+                    startActivity(intent)
+                    finish()
                 } else {
-                    Toast.makeText(this, "Login Firebase fallido", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Fallo al autenticar con Google", Toast.LENGTH_SHORT).show()
                 }
             }
     }
 
-    private fun enviarTokenAlBackend(firebaseToken: String) {
-        val request = TokenRequest(firebaseToken)
-        RetrofitClient.instance.sendToken(request)
-            .enqueue(object : Callback<LoginResponse> {
-                override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {
-                    if (response.isSuccessful && response.body() != null) {
-                        val loginResponse = response.body()!!
 
-                        // Guardamos el token recibido del backend
-                        val sharedPreferences = getSharedPreferences("UserPrefs", Context.MODE_PRIVATE)
-                        with(sharedPreferences.edit()) {
-                            putString("token", loginResponse.access_token) // Token JWT de tu backend
-                            putString("correo", loginResponse.user.correo)
-                            putString("nombre", loginResponse.user.nombre)
-                            apply()
-                        }
 
-                        // Redirigir al main
-                        startActivity(Intent(this@LoginActivity, MainActivity::class.java))
-                        finish()
-                    } else {
-                        Toast.makeText(this@LoginActivity, "Token inválido", Toast.LENGTH_SHORT).show()
-                    }
-                }
-
-                override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
-                    Toast.makeText(this@LoginActivity, "Error de red: ${t.message}", Toast.LENGTH_SHORT).show()
-                }
-            })
-    }
-
-    private fun isEmailValid(email: String): Boolean {
-        return android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()
-    }
 }

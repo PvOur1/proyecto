@@ -13,14 +13,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="20dp"
+        android:padding="10dp"
         android:gravity="center">
 
         <!-- LOGO DE LA APP -->
         <ImageView
             android:id="@+id/logoApp"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:layout_gravity="center"
             app:srcCompat="@drawable/logomototracer" />
 
@@ -32,7 +32,7 @@
             android:layout_gravity="center"
             android:paddingTop="10dp"
             android:text="@string/app_name"
-            android:textColor="@color/Blanco"
+            android:textColor="@color/Negro"
             android:textSize="24sp"
             android:textStyle="bold" />
 
@@ -42,9 +42,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:paddingBottom="20dp"
+            android:paddingBottom="5dp"
             android:text="Completa el formulario para registrarte"
-            android:textColor="@color/Blanco"
+            android:textColor="@color/Negro"
             android:textSize="16sp" />
 
         <!-- INPUT: NOMBRES -->
@@ -129,23 +129,53 @@
             android:padding="10dp"/>
 
         <!-- CHECKBOX: ACEPTAR TÉRMINOS -->
-        <CheckBox
-            android:id="@+id/chkTerminos"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingTop="10dp"
-            android:text="Acepto los términos y condiciones"
-            android:textColor="@color/Blanco" />
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:gravity="center_vertical">
 
+            <CheckBox
+                android:id="@+id/chkTerminos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:text=""
+                android:textColor="@color/Blanco" />
+
+            <TextView
+                android:id="@+id/txtTerminos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:focusable="true"
+                android:paddingStart="2dp"
+                android:text="Términos y condiciones"
+                android:textColor="@color/azul_claro_parcial"
+                android:textSize="14sp" />
+        </LinearLayout>
         <!-- BOTÓN DE REGISTRO -->
         <Button
             android:id="@+id/btnRegistro"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="1dp"
             android:background="@drawable/boton_redondeado_parcial"
             android:padding="10dp"
             android:text="Registrarme"
+            android:textColor="@android:color/white"
+            android:textSize="18sp" />
+        <Button
+            android:id="@+id/btnvolver"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/boton_redondeado_parcial"
+            android:padding="10dp"
+            android:text="Volver"
             android:textColor="@android:color/white"
             android:textSize="18sp" />
 
